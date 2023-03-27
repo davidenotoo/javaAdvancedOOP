@@ -8,7 +8,7 @@ public class Exercises {
         exercise1();
         exercise2();
         exercise3();
-//        exercise4();
+        exercise4();
     }
 
     /**
@@ -101,7 +101,7 @@ public class Exercises {
         int max = Integer.MAX_VALUE;
         int min = Integer.MIN_VALUE;
 
-                    // ho creato 3 scope con 3 metodi diversi...
+        // ho creato 3 scope con 3 metodi diversi...
 
         {  // 1° scope metodo assurdo sviluppato il un momento di confusione ma 9 volte su 10 funziona!😄
             List<Integer> indexatore = new ArrayList<>();
@@ -165,7 +165,12 @@ public class Exercises {
         Set<Integer> setB = Set.of(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
         Set<Integer> itemsContainedInBothSets = new HashSet<>();
 
-        // Your code
+        // non c'è bisogno di fare un for nidificato;
+        for (Integer nino : setA) {
+            if (setB.contains(nino)) {
+                itemsContainedInBothSets.add(nino);
+            }
+        }
 
         if (!itemsContainedInBothSets.equals(Set.of(5, 6, 7, 8, 9, 10))) {
             System.out.println("3b. Incorrect number of items in itemsContainedInBothSets");
@@ -184,7 +189,9 @@ public class Exercises {
         // 4a. Find the min value in the TreeSet with as few loops as possible,
         //     you can use `break;` to exit the loop once you've found it!
         int min = Integer.MAX_VALUE;
-        // Your code
+
+        // risolto molto semplicemente in una riga
+        min = ((TreeSet<Integer>)orderedNumbers).first();
 
         if (min != 1) {
             System.out.println("4a. Incorrect min value");
