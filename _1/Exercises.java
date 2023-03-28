@@ -103,7 +103,7 @@ public class Exercises {
 
         // ho creato 3 scope con 3 metodi diversi...
 
-        {  // 1° scope metodo assurdo sviluppato il un momento di confusione ma 9 volte su 10 funziona!😄
+        {  // 1° scope: metodo sviluppato il un momento di confusione ma 9 volte su 10 funziona!
             List<Integer> indexatore = new ArrayList<>();
             indexatore.addAll(numbers);
             Integer p = indexatore.get(0);
@@ -128,6 +128,7 @@ public class Exercises {
         }
 
         {   // 2° scope creato modificando ì valori di min e max invertendoli;
+            // in questo caso avrei pure potuto utilizzare i metodi Mat.max e min all'interno del forEach;
             int max1 = Integer.MIN_VALUE;
             int min1 = Integer.MAX_VALUE;
 
@@ -145,6 +146,7 @@ public class Exercises {
             System.out.println("Secondo max: " + max1 + " Secondo min: " + min1);
 
         }
+
         {   // 3° scope creando un TreeSet che automaticamente ordina il valore minimo all'inizio e il valore massimo alla fine.
             Set<Integer> alberello = new TreeSet<>();
             alberello.addAll(numbers);
@@ -190,7 +192,11 @@ public class Exercises {
         //     you can use `break;` to exit the loop once you've found it!
         int min = Integer.MAX_VALUE;
 
-//        min = ((TreeSet<Integer>) orderedNumbers).first();
+        // metodo istantaneo:
+        // min = ((TreeSet<Integer>) orderedNumbers).first();
+
+
+        // metodo con forEach:
         for (Integer gino : orderedNumbers) {
             if (min > gino) {
                 min = gino;
