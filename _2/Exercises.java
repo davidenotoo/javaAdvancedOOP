@@ -18,14 +18,26 @@ public class Exercises {
         Map<Integer, String> myFirstMap = new HashMap<>();
 
         // 1b. Add 3 elements to the map .put
+        myFirstMap.put(1, " Primo numero");
+        myFirstMap.put(2, " Secondo numero");
+        myFirstMap.put(3, " Terzo numero");
+
         // 1c. Print the map
+        System.out.println(myFirstMap);
+
         // 1d. Access an element in the map with .get
+        System.out.println(myFirstMap.get(1));
+
         // 1e. Remove an element from the map .remove
+        myFirstMap.remove(1);
+
         // 1f. Print the map again to confirm the element was removed
+        System.out.println(myFirstMap);
+
     }
 
     /**
-     *  2: Follow the instructions in the code
+     * 2: Follow the instructions in the code
      */
     private static void exercise2() {
         Map<String, Double> menuCostsInEuro = new HashMap<>();
@@ -41,7 +53,21 @@ public class Exercises {
         //     use for(Map.Entry<String, Double> entry : menuCostsInEuro.entrySet()) and entry.getKey and entry.getValue
         //     to do so
 
-        // Your code
+
+        // mi creo una variabile contenente il numero più piccolo possibile
+        Double max = Double.MIN_VALUE;
+
+        // questo forEach serve a creare un iteratore che riesca a pescare sia la chiave,
+        // sia il valore della mappa in base a che punto del ciclo si trova;
+        for (Map.Entry<String, Double> entry : menuCostsInEuro.entrySet()) {
+            // faccio 2 riassegnazioni continue:
+            //  nella prima riassegno a max il valore massimo
+            //  nella seconda riassegno a mostExpensiveMenuItemName la chiave corrispondente a max;
+            if (entry.getValue() > max) {
+                max = entry.getValue();
+                mostExpensiveMenuItemName = entry.getKey();
+            }
+        }
 
         if (mostExpensiveMenuItemName.equals("Pizza")) {
             System.out.println("2a. Correct!");
@@ -68,7 +94,10 @@ public class Exercises {
         int totalWeight = 0;
         // 3a. Use a for loop with fruitWeights.values() and sum up the total weight
 
-        // Your code
+        for (Map.Entry<String, Integer> iteratore : fruitWeights.entrySet()) {
+            // semplice forEach di incremento di una variabile sommando, ad ogni ciclo, se stessa con il valore;
+            totalWeight += iteratore.getValue();
+        }
 
         if (totalWeight == fruitWeights.values().stream().mapToInt(Integer::intValue).sum()) {
             System.out.println("3. Correct!");

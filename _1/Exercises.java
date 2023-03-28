@@ -190,11 +190,11 @@ public class Exercises {
         orderedNumbers.addAll(Set.of(5, 3, 1, 2, 4, 6, 7, 8, 9, 10));
         // 4a. Find the min value in the TreeSet with as few loops as possible,
         //     you can use `break;` to exit the loop once you've found it!
+        int min1 = Integer.MAX_VALUE;
         int min = Integer.MAX_VALUE;
 
         // metodo istantaneo:
-        // min = ((TreeSet<Integer>) orderedNumbers).first();
-
+        min1 = ((TreeSet<Integer>) orderedNumbers).first();
 
         // metodo con forEach:
         for (Integer gino : orderedNumbers) {
