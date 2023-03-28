@@ -145,7 +145,7 @@ public class Exercises {
             System.out.println("Secondo max: " + max1 + " Secondo min: " + min1);
 
         }
-        {   // 3° scope creando un TreeSet che automaticamente ordina in automatico il valore minimo all'inizio e il valore massimo alla fine.
+        {   // 3° scope creando un TreeSet che automaticamente ordina il valore minimo all'inizio e il valore massimo alla fine.
             Set<Integer> alberello = new TreeSet<>();
             alberello.addAll(numbers);
             int min2 = ((TreeSet<Integer>) alberello).first();
@@ -190,8 +190,12 @@ public class Exercises {
         //     you can use `break;` to exit the loop once you've found it!
         int min = Integer.MAX_VALUE;
 
-        // risolto molto semplicemente in una riga
-        min = ((TreeSet<Integer>)orderedNumbers).first();
+//        min = ((TreeSet<Integer>) orderedNumbers).first();
+        for (Integer gino : orderedNumbers) {
+            if (min > gino) {
+                min = gino;
+            }
+        }
 
         if (min != 1) {
             System.out.println("4a. Incorrect min value");
