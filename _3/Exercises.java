@@ -24,6 +24,7 @@ public class Exercises {
         // infine riassegno a list il set;
         list = new ArrayList<>(sdoppionaotre);
 
+        // test
         if (list.size() == 3) {
             System.out.println("Exercise 1: Success");
         } else {
@@ -110,42 +111,44 @@ public class Exercises {
      *
      *    What is the best data structure to use in the following scenarios, chose either a List, Set or Map
      *    and explain why you chose that data structure.
-     *
+
      *    1 - You want to store the students in order of their arrival
-     *    Answer:
+     *    Answer: LinkedHashSet <String>
      *
      *    2 - You want to store the students in a class and their grades
-     *    Answer:
+     *    Answer: TreeMap <String,Integer>
      *
      *    3 - You want to store the countries in the world in order of age
-     *    Answer:
+     *    Answer: TreeMap <String,Integer>
      *
      *    4 - You want to store the products available for purchase in an online store, along with their corresponding prices.
-     *    Answer:
+     *    Answer: metodo LinkedTreeMap() in cui è presente la classe Comparator;
      *
      *    5 - You want to store the employees at a company in the order you added them
-     *    Answer:
+     *    Answer:  LinkedList se si inseriscono manualmente in ordine, altrimenti TreeMap <String, Date>
      *
      *    6 - You want to store the cities in a particular state, along with their populations.
-     *    Answer:
+     *    Answer: TreeMap key(città), value(numero abitanti);
      *
      *    7 - You want to store the books in a library, along with their authors and publication dates.
-     *    Answer:
+     *    Answer: MultiKeyMap con key(libro), value1(autore), value2(data di pubblicazione)
+     *            si fa inserendo TreeMap < String,Value > dove Value è una classe creata con i campi value1 e value2;
      *
      *    8 - You want to store the courses offered at a university, along with the professors teaching each course.
-     *    Answer:
+     *    Answer: Map <String, String> nomeFacoltà;
      *
      *    9 - You want to store the movies in a movie rental store, along with their ratings and release dates.
-     *    Answer:
+     *    Answer: Map <Film, Date>; dove la classe Film ha come parametri una String nomeFilm e uno bite valutazioniFilm con min 0 e max 10;
      *
      *    10 - You want to store the flights available for booking on an airline, along with their destinations and departure times.
-     *    Answer:
+     *    Answer: TreeMap <String,Disponibilita>; la classe Disponibilita avrà dei campi di destinazione e orari;
      *
      *    11 - You want to store the articles on a news website, along with their titles and publication dates.
-     *    Answer:
+     *    Answer: TreeMap <Date, String>
      *
      *    12 - You want to store the songs in a music streaming service, along with their artists and album names.
-     *    Answer:
+     *    Answer: Map <String, Album>; la classe Album avrà dei campi String nomeAlbum e Autore nomeAutore che quest'ultima
+     *            classe avrà dei campi con le specifiche dell'autore, tipo: nome, genereRicorrente, età ecc...
      */
 
 }
