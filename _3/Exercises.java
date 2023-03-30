@@ -89,6 +89,7 @@ public class Exercises {
         System.out.println("Collezione senza doppioni: \n" + wordsNoDopp);
     }
 
+    // metodo che accetta una lista, creato per contare la ricorrenza delle parole e inserirle in un counter
     private static Map<String, Integer> contaParole(List<String> collezione) {
 
         // creo una mappa in cui inserire le Key(parole) e Value(quante volte si ripete la stessa parola);
