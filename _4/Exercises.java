@@ -75,7 +75,8 @@ public class Exercises {
         System.out.println("\nExercise 3: ");
         // Write code here to read the file and return the number of lines "\n", string.split
 
-        // metodo che utilizza i char counter;
+        // metodo che utilizza i char counter, più lento rispetto
+        // a iterare una stringa splittata ma più piacevole per giocare con il codice;
         try {
             FileReader reader = new FileReader("file.txt");
             int data = reader.read();
@@ -119,6 +120,16 @@ public class Exercises {
             FileWriter file2 = new FileWriter("file2.csv");
             file2.write("Ciao, creo questo file per poi cancellarlo");
             file2.close();
+
+            // itero all'interno della stringa splittata e conto le parole
+            Path fileDaLeggere = Paths.get("file2.csv");
+            String stringaDelFIle = Files.readString(fileDaLeggere);
+            String[] arrayDiParole = stringaDelFIle.split(" ");
+            int counter = 0;
+            for (int i = 0; i < arrayDiParole.length; i++) {
+                counter++;
+            }
+            System.out.println(counter + " ");
 
             // cancello il povero file appena creato;
             Files.delete(Paths.get("file2.csv"));
