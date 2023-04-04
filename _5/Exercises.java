@@ -1,8 +1,10 @@
 package javaadvanced._5;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
@@ -37,12 +39,13 @@ public class Exercises {
      */
     private static void exercise2() {
         System.out.println("\nExercise 2: ");
-        // Your code here
+
         try {
             String userInputFileName = "test-file.txt";
-
+            File file = new File(userInputFileName);
+            Scanner scanner = new Scanner(file);
         } catch (Exception exception) {
-            System.err.println("There was an error!");
+            System.err.println("ERROR 404: file not found🙁");
             exception.printStackTrace();
             System.exit(0);
         }
@@ -59,8 +62,13 @@ public class Exercises {
     private static void exercise3() {
         System.out.println("\nExercise 3: ");
         // Your code here
-
-        Integer.parseInt("house");
+        try {
+            Integer.parseInt("house");
+        } catch (Exception e) {
+            System.out.println("Ma che stai facendo?");
+            e.printStackTrace();
+            System.exit(0);
+        }
     }
 
     /**
@@ -78,10 +86,14 @@ public class Exercises {
 
         Double num1 = 10.0;
         String num2AsString = "0.0";
-        // try{
+         try{
         System.out.println(num1 / Double.parseDouble(num2AsString));
-        //}
-        // Your catch blocks here
+        }catch (Exception e){
+             System.out.println("Errore");
+             e.printStackTrace();
+             System.exit(0);
+         }
+
 
     }
 }
