@@ -1,13 +1,14 @@
 package javaadvanced._5;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Exercises {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         exercise1();
         exercise2();
         exercise3();
@@ -25,6 +26,7 @@ public class Exercises {
         try {
             Files.createFile(Path.of("Test.txt"));
         } catch (IOException e) {
+            System.err.println("Errore.");
             throw new RuntimeException(e);
         }
 
@@ -44,7 +46,9 @@ public class Exercises {
             String userInputFileName = "test-file.txt";
             File file = new File(userInputFileName);
             Scanner scanner = new Scanner(file);
-        } catch (Exception exception) {
+            System.out.println(scanner);
+            // tipologia di eccezione consigliata dall'IDE;
+        } catch (FileNotFoundException exception) {
             System.err.println("ERROR 404: file not found🙁");
             exception.printStackTrace();
             System.exit(0);
@@ -64,9 +68,10 @@ public class Exercises {
         // Your code here
         try {
             Integer.parseInt("house");
-        } catch (Exception e) {
-            System.out.println("Ma che stai facendo?");
-            e.printStackTrace();
+            // tipologia di eccezione consigliata dall'IDE;
+        } catch (NumberFormatException ex) {
+            System.err.println("Ma che stai facendo?");
+            ex.printStackTrace();
             System.exit(0);
         }
     }
@@ -86,13 +91,14 @@ public class Exercises {
 
         Double num1 = 10.0;
         String num2AsString = "0.0";
-         try{
-        System.out.println(num1 / Double.parseDouble(num2AsString));
-        }catch (Exception e){
-             System.out.println("Errore");
-             e.printStackTrace();
-             System.exit(0);
-         }
+        try {
+            System.out.println(num1 / Double.parseDouble(num2AsString));
+            // tipologia di eccezione consigliata dall'IDE;
+        } catch (NumberFormatException exception) {
+            System.err.println("Errore");
+            exception.printStackTrace();
+            System.exit(0);
+        }
 
 
     }
