@@ -35,11 +35,9 @@ public class Exercises {
         for (DaysOfWeek day : DaysOfWeek.values()) {
             System.out.println(day);
         }
-
         // metodo 2 utilizzado il collapse automatico dell'IDE
         Arrays.stream(DaysOfWeek.values()).forEach(System.out::println);
     }
-
 
     /**
      * 2:
@@ -179,12 +177,9 @@ public class Exercises {
         double num1 = 5;
         double num2 = 2;
 
-        // test
-        System.out.println(operaMath(num1, num2, Operator.ADD));
-        System.out.println(operaMath(num1, num2, Operator.SUBTRACT));
-        System.out.println(operaMath(num1, num2, Operator.MULTIPLY));
-        System.out.println(operaMath(num1, num2, Operator.DIVIDE));
-
+        // test collassato dall'ide, wow, mi piace!
+        for (Operator operator : Arrays.asList(Operator.ADD, Operator.SUBTRACT, Operator.MULTIPLY, Operator.DIVIDE)) {
+            System.out.println(operaMath(num1, num2, operator));
+        }
     }
-
 }
