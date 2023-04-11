@@ -49,11 +49,19 @@ class CalculatorTest {
     @Test
     void exercise2() {
         System.out.println("\nExercise 2: ");
-        // Your code here
 
         Calculator calculator = new Calculator();
         Assertions.assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
-        Assertions
+        //positive
+        Assertions.assertEquals(50,calculator.multiply(5,10));
+        Assertions.assertEquals(5,calculator.divide(50,10));
+        // negative
+        Assertions.assertEquals(-50,calculator.multiply(5,-10));
+        Assertions.assertEquals(-5,calculator.divide(-50,10));
+        // zero
+        Assertions.assertEquals(0,calculator.multiply(10,0));
+        // ArithmeticException: lancia eccezione se la divisione da come risultato lo 0;
+        Assertions.assertEquals(0,calculator.divide(10,0));
     }
 
     /**
@@ -71,6 +79,19 @@ class CalculatorTest {
     @Test
     void exercise3() {
         System.out.println("\nExercise 3: ");
-        // Your code here
+        // base zero, positive, and negative - the exponent is zero
+        Calculator calculator = new Calculator();
+        Assertions.assertEquals(1, calculator.power(0, 0));
+        Assertions.assertEquals(1, calculator.power(10, 0));
+        Assertions.assertEquals(1, calculator.power(-10, 0));
+        // positive and negative with exponent one
+        Assertions.assertEquals(2, calculator.power(2, 1));
+        Assertions.assertEquals(-2, calculator.power(-2, 1));
+        // positive and negative with exponent negative
+        Assertions.assertEquals(0.25, calculator.power(2, -2));
+        Assertions.assertEquals(0.25, calculator.power(-2, -2));
+        // decimals (ho settato il delta per avere max 2 cifre decimnali;
+        Assertions.assertEquals(1.58, calculator.power(2.5, 0.5),0.01);
+        Assertions.assertEquals(24.70, calculator.power(2.5, 3.5),0.01);
     }
 }
