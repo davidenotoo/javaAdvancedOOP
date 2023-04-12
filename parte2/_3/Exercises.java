@@ -18,7 +18,8 @@ public class Exercises {
      */
     private static void exercise1() {
         System.out.println("\nExercise 1: ");
-        // Your code here
+        Person persona = new Person("Davide",26,"Via dalla mia Via");
+        System.out.println(persona);
     }
 
     /**
@@ -32,8 +33,12 @@ public class Exercises {
      * Create 2 people and print out their hashcodes
      */
     private static void exercise2() {
-        System.out.println("\nExercise 1: ");
-        // Your code here
+        System.out.println("\nExercise 2: ");
+        Person persona0 = new Person("Davide",26,"Via dalla mia Via");
+        Person persona1 = new Person("Franco",33,"Via dal mio PC");
+
+        System.out.println(persona0.hashCode()); // -1245435941
+        System.out.println(persona1.hashCode()); // -1486830746
     }
 
     /**
