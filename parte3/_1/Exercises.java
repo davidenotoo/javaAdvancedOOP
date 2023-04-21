@@ -1,5 +1,6 @@
 package javaadvanced.parte3._1;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class Exercises {
@@ -60,8 +61,15 @@ public class Exercises {
     private static void exercise3() {
         System.out.println("\nExercise 3: ");
         BigInteger graaaande = new BigInteger("780912758461571087601239885409843759084370987901253");
+        BigDecimal grandeVirgola = new BigDecimal("24357852789020543578290253784237849.078523785904");
         BigInteger risultatoDivisione = graaaande.divide(new BigInteger("3"));
+
         System.out.println(risultatoDivisione);
+
+        BigDecimal pi = new BigDecimal(Math.PI);
+        BigDecimal risultato = grandeVirgola.divide(pi);
+
+        System.out.println(risultato+ "");
 
     }
 

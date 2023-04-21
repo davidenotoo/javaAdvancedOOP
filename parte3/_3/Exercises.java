@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Assertions;
 
 public class Exercises {
     public static void main(String[] args) {
-//        exercise1();
-//        exercise2();
+        exercise1();
+        exercise2();
         exercise3();
     }
 
@@ -25,9 +25,9 @@ public class Exercises {
     }
 
     private static int calculateFactorial(int number) {
-        //Fix this code
         int result = 1;
-        for (int i = number; i >= 1; i -= 2) {
+        // i--
+        for (int i = number; i >= 1; i --) {
             result = result * i;
         }
         return result;
@@ -46,14 +46,14 @@ public class Exercises {
         String input = "hello";
         String reversedString = reverseString(input);
         Assertions.assertEquals("olleh", reversedString);
+        System.out.println(reversedString);
     }
 
     private static String reverseString(String input) {
-        //Fix this code
-
         String reversed = "";
-        for (int i = input.length() - 1; i >= 1; i--) {
-            reversed += reversed + input.charAt(i);
+        for (int i = input.length() - 1; i >= 0; i--) {
+            // rimosso reversed dopo +=
+            reversed += input.charAt(i);
         }
         return reversed;
     }
@@ -78,7 +78,7 @@ public class Exercises {
     }
 
     private static boolean isPositive(int num) {
-        //Fix this code
-        return num >= 0;
+        // rimosso =
+        return num > 0;
     }
 }

@@ -32,7 +32,7 @@ public class Exercises {
     }
 
     private static void evenator(List<Integer> list) {
-        List<Integer> pariList = list.stream().filter(pippo -> pippo % 2 != 0).collect(Collectors.toList());
+        List<Integer> pariList = list.stream().filter(pippo -> pippo % 2 == 0).collect(Collectors.toList());
         pariList.forEach(System.out::println);
     }
 
@@ -52,7 +52,7 @@ public class Exercises {
     }
 
     private static void oddator(List<Integer> list) {
-        Set<Integer> evenNumbers = list.stream().filter(pippo -> pippo % 2 == 0).collect(Collectors.toSet());
+        Set<Integer> evenNumbers = list.stream().filter(pippo -> pippo % 2 != 0).collect(Collectors.toSet());
         evenNumbers.forEach(System.out::println);
     }
 
