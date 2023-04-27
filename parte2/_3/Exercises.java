@@ -37,8 +37,8 @@ public class Exercises {
         Person persona0 = new Person("Davide",26,"Via dalla mia Via");
         Person persona1 = new Person("Franco",33,"Via dal mio PC");
 
-        System.out.println(persona0.hashCode()); // -1245435941
-        System.out.println(persona1.hashCode()); // -1486830746
+        System.out.println(persona0.hashCode()); // -14926169
+        System.out.println(persona1.hashCode()); // -18944727
     }
 
     /**

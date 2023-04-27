@@ -29,6 +29,9 @@ public class Person {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, eta, indirizzo);
+        int hash = nome.length() * 2;
+        hash += eta * 574081;
+        hash += indirizzo.length() * 3;
+        return -hash;
     }
 }
